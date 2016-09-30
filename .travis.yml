@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.2
+otp_release:
+- 18.2
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: efhBXTRVkmk0gA7845YoYFiHhbPKOkYtildNMYDvB2uSw1vn6QeZOa/k9GyOP0FMLuiiNqSrSglM6e+fVgOylmVYDL233mw3p+j2UUVBzZfGPn2Z3Mvd/XIdL5jM12ATnMaMGuC0T1pcRsxgXtHhUTa+/CUUU51g2NwMxIaNasOfyrdUtuMuIWbiJarUuunymTytCxYotgzUyMKVtQEP3L4Z2SUmKsBp3h1qyVzD5riUHaoxSO57fmIIC9X9+qiNblm0M0NOxuX8WQPRvvTk/tVs7hoVg5ZJZqj/bXUJtFKvD8CnalLvC3uBSmqoXZ7LbD7jp3DtpMvV/nPAS0Yj/JGAMfh1YhUEJU67pCTjaRu8K5pYk2pTKzZ/hxR5ZJIo8S9jFEnDmdcTXOYOeE2SYDG/cvY12ZwjaAuQbbMSjdZ+Vr53Od5np47LEaNwE8iZFTJNZYqQv+tBcVj9ZB6KYjv1q6++mOan5ZD5HkMtPdbQJ6Dn2wuNr2tdepSUbznTj83pULwf8Fy2O2bcLmzgXEEem89sfoFRyIoWSE8QzbaWPt32XcUoJv6cZE9u7QvG1cKKzWHAmfB482BfWqMaAvjrAnQL4iRmDe4VDksEd5R4AG2+glPAatbV3ddRSJzZGTNnWA2HltdANHVDlR/oBtJbK/Ai45fP/vnKos1N5ro=
+  app: warm-springs-47881
+  on:
+    repo: AbdullahDahmash/peep-stack-api-tutorial
