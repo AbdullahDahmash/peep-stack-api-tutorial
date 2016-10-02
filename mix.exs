@@ -39,6 +39,7 @@ defmodule Peepchat.Mixfile do
      {:gettext, "~> 0.11"},
      {:guardian, "~> 0.13.0"},
      {:mix_test_watch, "~> 0.2", only: :dev},
+     {:ja_serializer, "~> 0.11.0"},
      {:cowboy, "~> 1.0"}]
   end
 
