@@ -29,3 +29,13 @@ config :peepchat, Peepchat.Repo,
   database: "peepchat_dev",
   hostname: "localhost",
   pool_size: 10
+
+  # gaurdian config
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "Peepchat",
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  secret_key: "anUGVvUoojuVxuFdfnNVnnDNSREYIqgU5ngAre3NU1yTGEOYIniQPJ+JlyA4qfP5",
+  serializer: Peepchat.GuardianSerializer

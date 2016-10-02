@@ -22,6 +22,16 @@ config :peepchat, Peepchat.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
 
+  # gaurdian config
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "Peepchat",
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  secret_key: System.get_env("GUARDIAN_SECRET"),
+  serializer: Peepchat.GuardianSerializer
+
 # Do not print debug messages in production
 config :logger, level: :info
 
