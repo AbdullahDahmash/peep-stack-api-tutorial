@@ -14,8 +14,4 @@ defmodule Peepchat.ErrorViewTest do
            %{"errors" => [%{code: 500, title: "Internal Server Error"}]}
   end
 
-  test "render any other" do
-    assert render(Peepchat.ErrorView, "505.json", []) ==
-           %{"errors" => [%{code: 505, title: "Internal Server Error"}]}
-  end
 end
