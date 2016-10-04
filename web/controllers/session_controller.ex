@@ -18,7 +18,7 @@ defmodule Peepchat.SessionController do
 
         checkpw(password, user.password_hash) ->
           # Successful login
-          Logger.info("User" <> username <> " just logged in")
+          Logger.info("User " <> username <> " just logged in")
           { :ok, jwt, _} = Guardian.encode_and_sign(user, :token)
           conn
           |> json(%{access_token: jwt})
