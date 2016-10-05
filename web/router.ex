@@ -10,6 +10,8 @@ defmodule Peepchat.Router do
     plug :accepts, ["json","json-api"]
     plug Guardian.Plug.VerifyHeader, realm: "Bearer"
     plug Guardian.Plug.LoadResource
+    plug JaSerializer.ContentTypeNegotiation
+    plug JaSerializer.Deserializer
   end
 
   scope "/api", Peepchat do

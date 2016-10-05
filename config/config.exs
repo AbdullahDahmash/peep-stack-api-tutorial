@@ -13,7 +13,7 @@ config :peepchat,
 config :peepchat, Peepchat.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "YsiLghDHdpy/XvMrQyh0KWqSjvhlmMCGwrqlTgeo6brHKkwgR2etMUgal40MJ+Sp",
-  render_errors: [view: Peepchat.ErrorView, accepts: ~w(json)],
+  render_errors: [view: Peepchat.ErrorView, accepts: ~w(json json-api)],
   pubsub: [name: Peepchat.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

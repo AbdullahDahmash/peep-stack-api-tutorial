@@ -32,7 +32,7 @@ defmodule Peepchat.RoomController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Peepchat.ChangesetView, "error.json", changeset: changeset)
+        |> render(Peepchat.ChangesetView, "error.json-api", changeset: changeset)
     end
   end
 
@@ -56,7 +56,7 @@ defmodule Peepchat.RoomController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Peepchat.ChangesetView, "error.json", changeset: changeset)
+        |> render(Peepchat.ChangesetView, "error.json-api", changeset: changeset)
     end
   end
 

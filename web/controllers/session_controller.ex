@@ -28,7 +28,7 @@ defmodule Peepchat.SessionController do
           Logger.warning "User " <> username <> " just failed to login"
           conn
           |> put_status(401)
-          |> render(Peepchat.ErrorView, "401.json") # 401
+          |> render(Peepchat.ErrorView, "401.json-api") # 401
       end
 
     rescue
@@ -37,7 +37,7 @@ defmodule Peepchat.SessionController do
         Logger.error "Unexpected error while attempting to login user " <> username
         conn
         |> put_status(401)
-        |> render(Peepchat.ErrorView, "401.json")
+        |> render(Peepchat.ErrorView, "401.json-api")
   	end
   end
 
